@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="header">
+    <svg class="chimera-logo" viewBox="0 0 220 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="CHIMERA logo">
+      <!-- Fractured C mark -->
+      <g transform="translate(22,22)">
+        <path d="M-13,-7 A15,15 0 0,1 13,-7" fill="none" stroke="#2C1810" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M13,-7 A15,15 0 0,1 15,3" fill="none" stroke="#D97706" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M-15,3 A15,15 0 0,1 -13,-7" fill="none" stroke="#2C1810" stroke-width="5.5" stroke-linecap="round" opacity="0.35"/>
+        <!-- fracture gap lines -->
+        <line x1="-14" y1="-7" x2="-11" y2="-5" stroke="#D97706" stroke-width="1.2"/>
+        <line x1="14" y1="-7" x2="11" y2="-5" stroke="#D97706" stroke-width="1.2"/>
+        <!-- centre dot -->
+        <circle cx="0" cy="0" r="2.5" fill="#D97706"/>
+      </g>
+      <!-- Wordmark -->
+      <text x="44" y="28" font-family="'Inter',sans-serif" font-size="17" font-weight="800" fill="#2C1810" letter-spacing="4">CHIMERA</text>
+      <!-- Thin rule + tagline -->
+      <line x1="44" y1="33" x2="218" y2="33" stroke="#D97706" stroke-width="0.5" opacity="0.5"/>
+      <text x="44" y="41" font-family="'Inter',sans-serif" font-size="6.5" font-weight="500" fill="#9A8070" letter-spacing="1.8">PHISHING DETECTION · CYBERSECURITY</text>
+    </svg>
+  </div>
+
+  <div class="mode-container">
+    <button id="mode-url" class="mode-btn active">URL Scan</button>
+    <button id="mode-email" class="mode-btn">Email Scan</button>
+  </div>
+
+  <div class="workspace">
+    <div id="url-input-container">
+      <label for="url-field">Target URL</label>
+      <input type="text" id="url-field" placeholder="https://example.com/login" autocomplete="off">
+    </div>
+
+    <div id="email-input-container" class="hidden">
+      <label for="email-field">Email Content / Headers</label>
+      <textarea id="email-field" placeholder="Paste the suspicious email text or raw headers here..."></textarea>
+    </div>
+
+    <button id="scan-btn">Analyze Target</button>
+    <button id="sandbox-btn">Deep Sandbox Scan</button>
+  </div>
+
+  <div id="result-container" class="result-card hidden">
+    <div class="score-display">
+      <span id="score-value">--</span>
+      <span class="score-max">/100</span>
+    </div>
+    <div id="verdict-text" class="verdict">Initializing...</div>
+    <div id="engine-badge" class="engine-badge"></div>
+    <div class="findings-list" id="findings-list"></div>
+  </div>
+
+  <div id="sandbox-detail" class="sandbox-detail hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

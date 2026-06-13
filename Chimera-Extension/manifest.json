@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "CHIMERA",
+  "version": "1.0",
+  "description": "Dual-mode Phishing Detection Engine",
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "https://*.hf.space/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1:*/*"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
+}
